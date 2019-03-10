@@ -1,0 +1,9 @@
+version: "3"
+services: 
+  openresty: 
+    image: openresty/openresty:alpine
+    ports: 
+     - "9090:9090"
+    volumes:
+     - "./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro"
+     - "./lua:/usr/local/openresty/nginx/lua:ro"

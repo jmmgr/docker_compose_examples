@@ -1,0 +1,16 @@
+version: "3"
+services: 
+  server1:
+    image: server_netcat
+    ports: 
+     - "9091:9090"
+  server2:
+    image: server_netcat
+    ports: 
+      - "9092:9090"
+  nginx: 
+    image: nginx:alpine
+    ports: 
+     - "9090:9090"
+    volumes:
+     - "./nginx.conf:/etc/nginx/nginx.conf:ro"
